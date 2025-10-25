@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+
+<body>
+    <h1 style="color: yellow;">Home page</h1>
+    {%for i in range(1,11)%}
+    <h2>{{n1}} X {{i}}= {{n1*i}}</h2>
+    {%endfor%}
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti, natus hic, ullam repudiandae nostrum
+        veritatis, libero laboriosam reiciendis impedit eveniet quae? Maiores minus omnis velit perspiciatis qui
+        voluptatum alias tempore!</p>
+    <h2> Registration Form</h2>
+    <form action="http://127.0.0.1:5000/register" method="POST">
+        Name: <input type="text" name="name" id="name" autocomplete="off"><br>
+        Phone: <input type="text" name="number" id="number" autocomplete="off"><br>
+        E-mail: <input type="email" name="email" id="email" autocomplete="off"><br>
+        <button type="submit">Submit</button>
+    </form>
+    <form action="http://127.0.0.1:5000/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">upload</button>
+    </form>
+</body>
+
+</html>
